@@ -1,0 +1,14 @@
+{
+  "TheMusician:MusicalLover": {
+    "MOVES":[
+      "Encouragement",
+      "Open Ear"
+    ],
+    "NAME": "Musical Lover",
+    "DIALOG": [
+      "Play more music!",
+      "I love this song!",
+      "I was your biggest fan!"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "TheMusician:BassPower": {
+    "NAME": "Bass",
+    "DESCRIPTIONS": [
+      "Increases ALL Bass cards Damage amount by ",
+      "."]
+  },
+  "TheMusician:StringPower": {
+    "NAME": "String",
+    "DESCRIPTIONS": [
+      "Increases ALL String cards Block amount by ",
+      "."]
+  },
+  "TheMusician:PercussionPower": {
+    "NAME": "Percussion",
+    "DESCRIPTIONS": [
+      "Increases ALL Percussion cards Buff amount by ",
+      "."]
+  },
+  "TheMusician:WoodwindPower": {
+    "NAME": "Woodwind",
+    "DESCRIPTIONS": [
+      "Increases ALL Bass cards Debuffs amount by ",
+      "."]
+  }
+}
