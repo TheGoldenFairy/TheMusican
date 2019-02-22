@@ -12,7 +12,6 @@
   "TheMusician:MusicalHarmony": {
     "NAME": "Musical Harmony",
     "FLAVOR": "A Musical Harmony loved and enjoyed by all.",
-    "DESCRIPTIONS": ["[#2aecd7]Usable [#2aecd7]once. Gain #b1 [E] . At the start of Non Boss combats Musical Fans will join.",
-      " At the end of combat get another card reward."]
+    "DESCRIPTIONS": ["Gain #b1 [E] . At the start of Non Boss combats Musical Fans will join."]
   }
 }

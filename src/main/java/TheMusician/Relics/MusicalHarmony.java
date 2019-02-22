@@ -4,20 +4,15 @@ import TheMusician.Encounters.MusicalLover;
 import TheMusician.Util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 
-import java.lang.reflect.Type;
 
 import static TheMusician.MusicianMod.*;
 
-public class MusicalHarmony extends CustomRelic implements ClickableRelic {
+public class MusicalHarmony extends CustomRelic {
 
     //~~~~~~~~~~~~~~~~~~ Relic Information ~~~~~~~~~~~~~~~~~~//
     public static final String ID = makeID("MusicalHarmony");
@@ -26,9 +21,7 @@ public class MusicalHarmony extends CustomRelic implements ClickableRelic {
 
 
     //~~~~~~~~~~~~~~~~~~ Variables  to be used ~~~~~~~~~~~~~~~~~~//
-    private boolean HASBEENCLICKED = false;
     private int NUMBEROFENEMIES = 0;
-
 
 
     //~~~~~~~~~~~~~~~~~~ Initialize Relic ~~~~~~~~~~~~~~~~~~//
@@ -39,21 +32,8 @@ public class MusicalHarmony extends CustomRelic implements ClickableRelic {
 
     //~~~~~~~~~~~~~~~~~~ Relic Uses ~~~~~~~~~~~~~~~~~~//
     @Override
-    public void onRightClick() {
-        if (!isObtained) {
-            return;
-        }
-        else {
-            if(!HASBEENCLICKED) {
-                flash();
-                HASBEENCLICKED = true;
-            }
-        }
-    }
-
-    @Override
     public void atBattleStart() {
-        if(HASBEENCLICKED && !(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss)) {
+        if(!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss)) {
             NUMBEROFENEMIES = 0;
             float offsetX = 0;
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
@@ -70,11 +50,19 @@ public class MusicalHarmony extends CustomRelic implements ClickableRelic {
         }
     }
 
+    public void onEquip() {
+        AbstractDungeon.player.energy.energyMaster += 1;
+    }
+
+    public void onUnequip() {
+        AbstractDungeon.player.energy.energyMaster -= 1;
+    }
+
 
     //~~~~~~~~~~~~~~~~~~ Description ~~~~~~~~~~~~~~~~~~//
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + DESCRIPTIONS[1];
+        return DESCRIPTIONS[0];
     }
 
 }
