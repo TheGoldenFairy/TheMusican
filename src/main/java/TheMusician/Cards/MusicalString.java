@@ -3,7 +3,7 @@ package TheMusician.Cards;
 import TheMusician.Characters.TheMusician;
 import TheMusician.MusicianMod;
 import TheMusician.Patches.CustomTags;
-import TheMusician.Powers.BassPower;
+import TheMusician.Powers.BrassPower;
 import TheMusician.Powers.StringsPower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -50,7 +50,7 @@ public class MusicalString extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StringsPower(p, p, STRING_AMT), STRING_AMT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BassPower(p, p, BASS_AMT), BASS_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrassPower(p, p, BASS_AMT), BASS_AMT));
     }
 
     //~~~~~~~~~~~~~~~~~~ Upgraded Card ~~~~~~~~~~~~~~~~~~

@@ -3,7 +3,7 @@ package TheMusician.Cards;
 import TheMusician.Characters.TheMusician;
 import TheMusician.MusicianMod;
 import TheMusician.Patches.CustomTags;
-import TheMusician.Powers.BassPower;
+import TheMusician.Powers.BrassPower;
 import TheMusician.Powers.StringsPower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -12,13 +12,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-public class MusicalBass extends CustomCard {
+public class MusicalBrass extends CustomCard {
 
 
     //~~~~~~~~~~~~~~~~~~ Getting All the Card's Information ~~~~~~~~~~~~~~~~~~//
-    public static final String CARD_ID = MusicianMod.makeID("MusicalBass");
+    public static final String CARD_ID = MusicianMod.makeID("MusicalBrass");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
     public static final String IMG = MusicianMod.makeCardPath("skills/Beta.png");
     public static final String NAME = cardStrings.NAME;
@@ -40,7 +39,7 @@ public class MusicalBass extends CustomCard {
 
 
     //~~~~~~~~~~~~~~~~~~ Initializing the Card ~~~~~~~~~~~~~~~~~~//
-    public MusicalBass() {
+    public MusicalBrass() {
         super(CARD_ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = BASS_AMT;
         exhaust = true;
@@ -50,7 +49,7 @@ public class MusicalBass extends CustomCard {
     //~~~~~~~~~~~~~~~~~~ Uses of the Card ~~~~~~~~~~~~~~~~~~//
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BassPower(p, p, BASS_AMT), BASS_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrassPower(p, p, BASS_AMT), BASS_AMT));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StringsPower(p, p, STRING_AMT), STRING_AMT));
     }
 

@@ -1,8 +1,8 @@
 {
-  "TheMusician:BassPower": {
-    "NAME": "Bass",
+  "TheMusician:BrassPower": {
+    "NAME": "Brass",
     "DESCRIPTIONS": [
-      "Increases ALL Bass cards Damage amount by ",
+      "Increases ALL Brass cards Damage amount by ",
       "."]
   },
   "TheMusician:StringPower": {

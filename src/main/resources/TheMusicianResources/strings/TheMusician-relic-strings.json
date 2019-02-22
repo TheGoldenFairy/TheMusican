@@ -2,12 +2,12 @@
   "TheMusician:MusicalInstrument": {
     "NAME": "Musical Instrument",
     "FLAVOR": "A Musicians best friend.",
-    "DESCRIPTIONS": ["Gain 1 #yBass and #yPercussion at the start of combat."]
+    "DESCRIPTIONS": ["Gain 1 #yBrass and #yPercussion at the start of combat."]
   },
   "TheMusician:MusicalAward": {
     "NAME": "Musical Award",
     "FLAVOR": "An Award given to only the best of Musicians",
-    "DESCRIPTIONS": ["Gain #b1 #yBass, #yPercussion, #yWoodwind and #yString at the start of combat."]
+    "DESCRIPTIONS": ["Gain #b1 #yBrass, #yPercussion, #yWoodwind and #yString at the start of combat."]
   },
   "TheMusician:MusicalHarmony": {
     "NAME": "Musical Harmony",

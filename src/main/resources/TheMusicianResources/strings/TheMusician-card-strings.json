@@ -13,11 +13,11 @@
   },
   "TheMusician:MusicalString": {
     "NAME": "Musical String",
-    "DESCRIPTION": "Gain !M! String. NL Lose 1 Bass. NL Exhaust."
+    "DESCRIPTION": "Gain !M! String. NL Lose 1 Brass. NL Exhaust."
   },
-  "TheMusician:MusicalBass": {
-    "NAME": "Musical Bass",
-    "DESCRIPTION": "Gain !M! Bass. NL Lose 1 String. NL Exhaust."
+  "TheMusician:MusicalBrass": {
+    "NAME": "Musical Brass",
+    "DESCRIPTION": "Gain !M! Brass. NL Lose 1 String. NL Exhaust."
   },
   "TheMusician:MusicalWoodWind": {
     "NAME": "Musical WoodWind",

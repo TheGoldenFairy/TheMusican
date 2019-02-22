@@ -11,7 +11,6 @@ import TheMusician.Variables.MusicianCustomVariable;
 import TheMusician.Variables.MusicianSecondMagicNumber;
 import basemod.BaseMod;
 import basemod.ModPanel;
-import basemod.helpers.BaseModCardTags;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -168,6 +167,8 @@ public class MusicianMod implements EditCharactersSubscriber,
 
         logger.info("Done Adding Monsters");
 
+        logger.info("Adding Card Groups");
+
         MusicalGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard card : CardLibrary.getAllCards())
         {
@@ -175,6 +176,8 @@ public class MusicianMod implements EditCharactersSubscriber,
                 MusicalGroup.addToBottom(card);
             }
         }
+
+        logger.info("Done Adding Card Groups");
     }
 
     @Override
@@ -209,7 +212,7 @@ public class MusicianMod implements EditCharactersSubscriber,
         logger.info("Adding Musician variables");
         //Ignore this
         pathCheck();
-        // Add the Custom Dynamic Variables
+
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new MusicianCustomVariable());
         BaseMod.addDynamicVariable(new MusicianSecondMagicNumber());
@@ -219,7 +222,7 @@ public class MusicianMod implements EditCharactersSubscriber,
         //====== CARDS ADDED: 7 ======//
         logger.info("Adding Musician Cards.");
         BaseMod.addCard(new Defend_Musician());
-        BaseMod.addCard(new MusicalBass());
+        BaseMod.addCard(new MusicalBrass());
         BaseMod.addCard(new MusicalPercussion());
         BaseMod.addCard(new MusicalString());
         BaseMod.addCard(new MusicalWoodWind());
@@ -230,7 +233,7 @@ public class MusicianMod implements EditCharactersSubscriber,
         //====== UNLOCK CARD IN ORDER ======//
         //====== UNLOCKED CARDS: 7 ======//
         UnlockTracker.unlockCard(Defend_Musician.CARD_ID);
-        UnlockTracker.unlockCard(MusicalBass.CARD_ID);
+        UnlockTracker.unlockCard(MusicalBrass.CARD_ID);
         UnlockTracker.unlockCard(MusicalPercussion.CARD_ID);
         UnlockTracker.unlockCard(MusicalString.CARD_ID);
         UnlockTracker.unlockCard(MusicalWoodWind.CARD_ID);
@@ -257,11 +260,11 @@ public class MusicianMod implements EditCharactersSubscriber,
 
         //PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                        getModID() + "Resources/strings/TheMusician-powers-strings.json");
+                getModID() + "Resources/strings/TheMusician-powers-strings.json");
 
         //MonsterStrings
         BaseMod.loadCustomStringsFile(MonsterStrings.class,
-                                getModID() + "Resources/strings/TheMusician-monsters-strings.json");
+                getModID() + "Resources/strings/TheMusician-monsters-strings.json");
     }
 
     private void InitializeMonsters() {

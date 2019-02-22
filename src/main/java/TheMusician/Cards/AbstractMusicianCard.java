@@ -12,10 +12,10 @@ public abstract class AbstractMusicianCard extends CustomCard {
     public int MusicianBaseSecondMagicNumber;
     public boolean upgradedMusicianSecondMagicNumber;
     public boolean isMusicianSecondMagicNumberModified;
-    public static final String BASS_POWER = "TheMusician:BassPower";
-    public static final String STRING_POWER = "TheMusician:StringPower";
-    public static final String WOODWIND_POWER = "TheMusician:WoodWindPower";
-    public static final String PERCUSSION_POWER = "TheMusician:PercussionPower";
+    private static final String BRASS_POWER = "TheMusician:BrassPower";
+    private static final String STRING_POWER = "TheMusician:StringPower";
+    private static final String WOODWIND_POWER = "TheMusician:WoodWindPower";
+    private static final String PERCUSSION_POWER = "TheMusician:PercussionPower";
 
 
     public AbstractMusicianCard(final String id, final String name, final String img, final int cost, final String rawDescription,
@@ -52,8 +52,8 @@ public abstract class AbstractMusicianCard extends CustomCard {
         int tmp1 = baseDamage;
         int tmp2 = baseBlock;
         int tmp3 = baseMagicNumber;
-        if(this.hasTag(CustomTags.BASS) &&  AbstractDungeon.player.hasPower(BASS_POWER)) {
-            baseDamage += AbstractDungeon.player.getPower(BASS_POWER).amount;
+        if(this.hasTag(CustomTags.BRASS) &&  AbstractDungeon.player.hasPower(BRASS_POWER)) {
+            baseDamage += AbstractDungeon.player.getPower(BRASS_POWER).amount;
         }
         if(this.hasTag(CustomTags.STRING) &&  AbstractDungeon.player.hasPower(STRING_POWER)) {
             baseBlock += AbstractDungeon.player.getPower(STRING_POWER).amount;
@@ -77,8 +77,8 @@ public abstract class AbstractMusicianCard extends CustomCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int tmp1 = baseDamage;
-        if (this.hasTag(CustomTags.BASS) && AbstractDungeon.player.hasPower(BASS_POWER)) {
-            baseDamage = baseBlock + AbstractDungeon.player.getPower(BASS_POWER).amount;
+        if (this.hasTag(CustomTags.BRASS) && AbstractDungeon.player.hasPower(BRASS_POWER)) {
+            baseDamage += AbstractDungeon.player.getPower(BRASS_POWER).amount;
         }
         super.calculateCardDamage(mo);
         baseDamage = tmp1;

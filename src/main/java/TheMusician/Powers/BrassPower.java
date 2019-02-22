@@ -15,10 +15,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static TheMusician.MusicianMod.makePowerPath;
 
-public class BassPower extends AbstractPower {
+public class BrassPower extends AbstractPower {
 
     //~~~~~~~~~~~~~~~~~~ Power's Information ~~~~~~~~~~~~~~~~~~//
-    private static final String POWER_ID = MusicianMod.makeID("BassPower");
+    private static final String POWER_ID = MusicianMod.makeID("BrassPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -31,7 +31,7 @@ public class BassPower extends AbstractPower {
 
 
     //~~~~~~~~~~~~~~~~~~ Constructor ~~~~~~~~~~~~~~~~~~//
-    public BassPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public BrassPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

@@ -1,6 +1,6 @@
 package TheMusician.Relics;
 
-import TheMusician.Powers.BassPower;
+import TheMusician.Powers.BrassPower;
 import TheMusician.Powers.PercussionPower;
 import TheMusician.Util.TextureLoader;
 import basemod.abstracts.CustomRelic;
@@ -33,7 +33,7 @@ public class MusicalInstrument extends CustomRelic {
     //~~~~~~~~~~~~~~~~~~ Relic Uses ~~~~~~~~~~~~~~~~~~//
     @Override
     public void atBattleStart() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BassPower(player, player, POWER_AMT), POWER_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BrassPower(player, player, POWER_AMT), POWER_AMT));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PercussionPower(player, player, POWER_AMT), POWER_AMT));
     }
 
