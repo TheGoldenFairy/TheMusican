@@ -8,23 +8,23 @@
     "DESCRIPTION": "Gain !B! Block."
   },
   "TheMusician:MusicalPercussion": {
-    "NAME": "MusicalPercussion",
-    "DESCRIPTION": "Gain 1 Percussion. NL Lose 1 Bass. NL Exhaust."
+    "NAME": "Musical Percussion",
+    "DESCRIPTION": "Gain !M! Percussion. NL Lose 1 WoodWind. NL Exhaust."
   },
   "TheMusician:MusicalString": {
-    "NAME": "MusicalPercussion",
-    "DESCRIPTION": "Gain 1 Percussion. NL Lose 1 Bass. NL Exhaust."
+    "NAME": "Musical String",
+    "DESCRIPTION": "Gain !M! String. NL Lose 1 Bass. NL Exhaust."
   },
   "TheMusician:MusicalBass": {
-    "NAME": "MusicalPercussion",
-    "DESCRIPTION": "Gain 1 Percussion. NL Lose 1 Bass. NL Exhaust."
+    "NAME": "Musical Bass",
+    "DESCRIPTION": "Gain !M! Bass. NL Lose 1 String. NL Exhaust."
   },
   "TheMusician:MusicalWoodWind": {
-    "NAME": "MusicalPercussion",
-    "DESCRIPTION": "Gain 1 Percussion. NL Lose 1 Bass. NL Exhaust."
+    "NAME": "Musical WoodWind",
+    "DESCRIPTION": "Gain !M! WoodWind. NL Lose 1 Percussion. NL Exhaust."
   },
   "TheMusician:TheBand": {
     "NAME": "The Band",
-    "DESCRIPTION": "Gain 1 Musical Card to your hand."
+    "DESCRIPTION": "Add 1 Musical Card to your hand."
   }
 }

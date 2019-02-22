@@ -35,8 +35,8 @@ public class TheBand extends CustomCard {
     //~~~~~~~~~~~~~~~~~~ Getting the Cards Numbers ~~~~~~~~~~~~~~~~~~//
     private static final int COST = 1;
     private static final int UPGRADE_MINUS_COST = 0;
-    private static final int MUSICAL_CARD = 1;
-    private int RNG;
+    private AbstractCard TempCard;
+
 
     //~~~~~~~~~~~~~~~~~~ Initializing the Card ~~~~~~~~~~~~~~~~~~//
     public TheBand() {
@@ -46,7 +46,8 @@ public class TheBand extends CustomCard {
     //~~~~~~~~~~~~~~~~~~ Uses of the Card ~~~~~~~~~~~~~~~~~~//
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        MusicalGroup.getRandomCard(AbstractDungeon.cardRandomRng);
+        TempCard = MusicalGroup.getRandomCard(AbstractDungeon.cardRandomRng);
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(TempCard));
     }
 
     //~~~~~~~~~~~~~~~~~~ Upgraded Card ~~~~~~~~~~~~~~~~~~

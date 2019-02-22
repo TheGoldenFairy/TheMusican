@@ -20,7 +20,7 @@
   "TheMusician:WoodwindPower": {
     "NAME": "Woodwind",
     "DESCRIPTIONS": [
-      "Increases ALL Bass cards Debuffs amount by ",
+      "Increases ALL WoodWind cards Debuffs amount by ",
       "."]
   }
 }
