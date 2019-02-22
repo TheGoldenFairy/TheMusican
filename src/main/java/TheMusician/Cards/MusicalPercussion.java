@@ -2,9 +2,14 @@ package TheMusician.Cards;
 
 import TheMusician.Characters.TheMusician;
 import TheMusician.MusicianMod;
+import TheMusician.Patches.CustomTags;
+import TheMusician.Powers.PercussionPower;
+import TheMusician.Powers.WoodWindPower;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -37,11 +42,14 @@ public class MusicalPercussion extends CustomCard {
         super(CARD_ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = PERCUSSION_AMT;
         exhaust = true;
+        this.tags.add(CustomTags.MUSICAL);
     }
 
     //~~~~~~~~~~~~~~~~~~ Uses of the Card ~~~~~~~~~~~~~~~~~~//
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PercussionPower(p, p, PERCUSSION_AMT), PERCUSSION_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WoodWindPower(p, p, WOODWIND_AMT), WOODWIND_AMT));
     }
 
     //~~~~~~~~~~~~~~~~~~ Upgraded Card ~~~~~~~~~~~~~~~~~~

@@ -13,4 +13,6 @@ public class CustomTags
     public static AbstractCard.CardTags PERCUSSION;
     @SpireEnum
     public static AbstractCard.CardTags WOODWIND;
+    @SpireEnum
+    public static AbstractCard.CardTags MUSICAL;
 }

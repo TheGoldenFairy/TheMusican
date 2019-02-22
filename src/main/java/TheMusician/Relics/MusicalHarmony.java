@@ -21,7 +21,9 @@ public class MusicalHarmony extends CustomRelic {
 
 
     //~~~~~~~~~~~~~~~~~~ Variables  to be used ~~~~~~~~~~~~~~~~~~//
-    private int NUMBEROFENEMIES = 0;
+    private float previousMhb_x = 99999;
+    private float offsetX;
+    private int NUMOFMONSTERS = 0;
 
 
     //~~~~~~~~~~~~~~~~~~ Initialize Relic ~~~~~~~~~~~~~~~~~~//
@@ -34,17 +36,15 @@ public class MusicalHarmony extends CustomRelic {
     @Override
     public void atBattleStart() {
         if(!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss)) {
-            NUMBEROFENEMIES = 0;
-            float offsetX = 0;
+            NUMOFMONSTERS = 0;
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                offsetX -= 250F;
-                NUMBEROFENEMIES++;
+                if(m.hb_x < previousMhb_x) {
+                    previousMhb_x = m.hb_x;
+                }
+                NUMOFMONSTERS++;
             }
-            if (NUMBEROFENEMIES <= 2) {
-                AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new MusicalLover(offsetX - 100F, 15.0f), false));
-                AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new MusicalLover(offsetX - 350F, 15.0f), false));
-            }
-            else {
+            if(NUMOFMONSTERS < 4) {
+                offsetX = previousMhb_x - 200;
                 AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new MusicalLover(offsetX - 100F, 15.0f), false));
             }
         }

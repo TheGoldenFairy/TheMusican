@@ -3,6 +3,7 @@ package TheMusician;
 import TheMusician.Cards.*;
 import TheMusician.Characters.TheMusician;
 import TheMusician.Encounters.MusicalLover;
+import TheMusician.Patches.CustomTags;
 import TheMusician.Relics.MusicalAward;
 import TheMusician.Relics.MusicalHarmony;
 import TheMusician.Relics.MusicalInstrument;
@@ -10,13 +11,17 @@ import TheMusician.Variables.MusicianCustomVariable;
 import TheMusician.Variables.MusicianSecondMagicNumber;
 import basemod.BaseMod;
 import basemod.ModPanel;
+import basemod.helpers.BaseModCardTags;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -71,6 +76,10 @@ public class MusicianMod implements EditCharactersSubscriber,
 
     //~~~~~~~~~~~~~~~~~~~~ Getting the New Color for the Musician ~~~~~~~~~~~~~~~~~~~~//
     public static final Color MUSICIAN_GOLD = CardHelper.getColor(255.0f,215.0f,0.0f);
+
+
+    //~~~~~~~~~~~~~~~~~~~~ Variables to be used ~~~~~~~~~~~~~~~~~~~~//
+    public static CardGroup MusicalGroup;
 
 
     //~~~~~~~~~~~~~~~~~~~~ Initializing the Mod ~~~~~~~~~~~~~~~~~~~~//
@@ -158,6 +167,14 @@ public class MusicianMod implements EditCharactersSubscriber,
         InitializeMonsters();
 
         logger.info("Done Adding Monsters");
+
+        MusicalGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        for (AbstractCard card : CardLibrary.getAllCards())
+        {
+            if (card.hasTag(CustomTags.MUSICAL)) {
+                MusicalGroup.addToBottom(card);
+            }
+        }
     }
 
     @Override

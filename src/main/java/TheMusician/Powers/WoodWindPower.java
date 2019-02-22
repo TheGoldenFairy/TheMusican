@@ -18,7 +18,7 @@ import static TheMusician.MusicianMod.makePowerPath;
 public class WoodWindPower extends AbstractPower {
 
     //~~~~~~~~~~~~~~~~~~ Power's Information ~~~~~~~~~~~~~~~~~~//
-    private static final String POWER_ID = MusicianMod.makeID("WoodWindPower");
+    private static final String POWER_ID = MusicianMod.makeID("WoodwindPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -41,8 +41,9 @@ public class WoodWindPower extends AbstractPower {
         this.isTurnBased = false;
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        this.canGoNegative = true;
 
-        updateDescription();
+        this.updateDescription();
     }
 
     @Override
