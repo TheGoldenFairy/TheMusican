@@ -9,9 +9,10 @@
     "FLAVOR": "An Award given to only the best of Musicians",
     "DESCRIPTIONS": ["Gain #b1 #yBrass, #yPercussion, #yWoodwind and #yString at the start of combat."]
   },
-  "TheMusician:MusicalHarmony": {
-    "NAME": "Musical Harmony",
+  "TheMusician:MusicalCrowd": {
+    "NAME": "Musical Crowd",
     "FLAVOR": "A Musical Harmony loved and enjoyed by all.",
     "DESCRIPTIONS": ["Gain #b1 [E] . At the start of Non Boss combats Musical Fans will join."]
-  }
+  },
+  "TheMusician:Musics"
 }

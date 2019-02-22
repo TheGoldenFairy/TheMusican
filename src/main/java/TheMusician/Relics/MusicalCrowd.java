@@ -12,10 +12,10 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 
 import static TheMusician.MusicianMod.*;
 
-public class MusicalHarmony extends CustomRelic {
+public class MusicalCrowd extends CustomRelic {
 
     //~~~~~~~~~~~~~~~~~~ Relic Information ~~~~~~~~~~~~~~~~~~//
-    public static final String ID = makeID("MusicalHarmony");
+    public static final String ID = makeID("MusicalCrowd");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("Beta.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("Beta.png"));
 
@@ -27,7 +27,7 @@ public class MusicalHarmony extends CustomRelic {
 
 
     //~~~~~~~~~~~~~~~~~~ Initialize Relic ~~~~~~~~~~~~~~~~~~//
-    public MusicalHarmony() {
+    public MusicalCrowd() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
     }
 

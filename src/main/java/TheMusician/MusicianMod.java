@@ -5,7 +5,7 @@ import TheMusician.Characters.TheMusician;
 import TheMusician.Encounters.MusicalLover;
 import TheMusician.Patches.CustomTags;
 import TheMusician.Relics.MusicalAward;
-import TheMusician.Relics.MusicalHarmony;
+import TheMusician.Relics.MusicalCrowd;
 import TheMusician.Relics.MusicalInstrument;
 import TheMusician.Variables.MusicianCustomVariable;
 import TheMusician.Variables.MusicianSecondMagicNumber;
@@ -198,12 +198,12 @@ public class MusicianMod implements EditCharactersSubscriber,
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new MusicalInstrument(), TheMusician.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new MusicalAward(), TheMusician.Enums.COLOR_GOLD);
-        BaseMod.addRelicToCustomPool(new MusicalHarmony(), TheMusician.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new MusicalCrowd(), TheMusician.Enums.COLOR_GOLD);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(MusicalInstrument.ID);
         UnlockTracker.markRelicAsSeen(MusicalAward.ID);
-        UnlockTracker.markRelicAsSeen(MusicalHarmony.ID);
+        UnlockTracker.markRelicAsSeen(MusicalCrowd.ID);
         logger.info("Done adding relics!");
     }
 
