@@ -14,9 +14,6 @@ public class MusicalDestiny extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("Beta.png"));
 
 
-    //~~~~~~~~~~~~~~~~~~ Variables  to be used ~~~~~~~~~~~~~~~~~~//
-
-
     //~~~~~~~~~~~~~~~~~~ Initialize Relic ~~~~~~~~~~~~~~~~~~//
     public MusicalDestiny() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);

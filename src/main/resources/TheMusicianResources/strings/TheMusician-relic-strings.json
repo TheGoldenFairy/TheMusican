@@ -14,5 +14,9 @@
     "FLAVOR": "A Musical Harmony loved and enjoyed by all.",
     "DESCRIPTIONS": ["Gain #b1 [E] . At the start of Non Boss combats Musical Fans will join."]
   },
-  "TheMusician:Musics"
+  "TheMusician:MusicalDestiny": {
+    "NAME": "Musical Destiny",
+    "FLAVOR": "The True Destiny of a Musician.",
+    "DESCRIPTIONS": ["At the end of combat have another card to pick from."]
+  }
 }

@@ -15,10 +15,10 @@ import javassist.CtBehavior;
         method = "setupItemReward"
 )
 public class NewCombatRewards {
-    @SpireInsertPatch(locator = Locator.class,
-            localvars = {"cardReward"})
+    @SpireInsertPatch(locator = Locator.class)
 
-    public static void Insert(CombatRewardScreen _instance, RewardItem cardReward) {
+    public static void Insert(CombatRewardScreen _instance) {
+        RewardItem cardReward;
         if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom && AbstractDungeon.player.hasRelic(MusicalDestiny.ID) && !(AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite) && !(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss)) {
             cardReward = new RewardItem();
             if (cardReward.cards.size() > 0) {

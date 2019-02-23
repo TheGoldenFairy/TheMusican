@@ -6,6 +6,7 @@ import TheMusician.Encounters.MusicalLover;
 import TheMusician.Patches.CustomTags;
 import TheMusician.Relics.MusicalAward;
 import TheMusician.Relics.MusicalCrowd;
+import TheMusician.Relics.MusicalDestiny;
 import TheMusician.Relics.MusicalInstrument;
 import TheMusician.Variables.MusicianCustomVariable;
 import TheMusician.Variables.MusicianSecondMagicNumber;
@@ -199,11 +200,13 @@ public class MusicianMod implements EditCharactersSubscriber,
         BaseMod.addRelicToCustomPool(new MusicalInstrument(), TheMusician.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new MusicalAward(), TheMusician.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new MusicalCrowd(), TheMusician.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new MusicalDestiny(), TheMusician.Enums.COLOR_GOLD);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(MusicalInstrument.ID);
         UnlockTracker.markRelicAsSeen(MusicalAward.ID);
         UnlockTracker.markRelicAsSeen(MusicalCrowd.ID);
+        UnlockTracker.markRelicAsSeen(MusicalDestiny.ID);
         logger.info("Done adding relics!");
     }
 
@@ -239,6 +242,16 @@ public class MusicianMod implements EditCharactersSubscriber,
         UnlockTracker.unlockCard(MusicalWoodWind.CARD_ID);
         UnlockTracker.unlockCard(Strike_Musician.CARD_ID);
         UnlockTracker.unlockCard(TheBand.CARD_ID);
+
+
+        //====== CARD TESTING ======//
+        BaseMod.addCard(new TestDefend());
+        BaseMod.addCard(new TestingDefend());
+        BaseMod.addCard(new TestingDefender());
+        BaseMod.addCard(new TestStrike());
+        BaseMod.addCard(new TestingStrike());
+        BaseMod.addCard(new TestingStikers());
+
         logger.info("Done adding Musician Cards.");
     }
 
