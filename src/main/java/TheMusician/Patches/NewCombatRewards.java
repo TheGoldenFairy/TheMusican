@@ -10,10 +10,14 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import javassist.CtBehavior;
 
+//~~~~~~~~~~~~~~~~~~ SpirePatch ~~~~~~~~~~~~~~~~~~//
 @SpirePatch(
         clz = CombatRewardScreen.class,
         method = "setupItemReward"
 )
+
+
+//~~~~~~~~~~~~~~~~~~ Adding in the code ~~~~~~~~~~~~~~~~~~//
 public class NewCombatRewards {
     @SpireInsertPatch(locator = Locator.class)
 
@@ -32,7 +36,7 @@ public class NewCombatRewards {
         public int[] Locate(CtBehavior ctMethod) throws Exception {
             Matcher matcher = new Matcher.NewExprMatcher(RewardItem.class);
             int[] found = LineFinder.findAllInOrder(ctMethod, matcher);
-            return new int[] {found[2]};
+            return new int[] {found[1]};
         }
     }
 }

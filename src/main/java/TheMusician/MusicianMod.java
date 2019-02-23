@@ -244,14 +244,6 @@ public class MusicianMod implements EditCharactersSubscriber,
         UnlockTracker.unlockCard(TheBand.CARD_ID);
 
 
-        //====== CARD TESTING ======//
-        BaseMod.addCard(new TestDefend());
-        BaseMod.addCard(new TestingDefend());
-        BaseMod.addCard(new TestingDefender());
-        BaseMod.addCard(new TestStrike());
-        BaseMod.addCard(new TestingStrike());
-        BaseMod.addCard(new TestingStikers());
-
         logger.info("Done adding Musician Cards.");
     }
 
