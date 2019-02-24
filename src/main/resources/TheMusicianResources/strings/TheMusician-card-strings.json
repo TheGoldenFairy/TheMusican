@@ -26,29 +26,5 @@
   "TheMusician:TheBand": {
     "NAME": "The Band",
     "DESCRIPTION": "Add 1 Musical Card to your hand."
-  },
-  "TheMusician:TestStrike": {
-    "NAME": "TStrike",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
-  "TheMusician:TestingStrikers": {
-    "NAME": "TStrike",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
-  "TheMusician:TestingStrike": {
-    "NAME": "TStrike",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
-  "TheMusician:TestDefend": {
-    "NAME": "TDefend",
-    "DESCRIPTION": "Gain !B! Block."
-  },
-  "TheMusician:TestingDefend": {
-    "NAME": "TDefend",
-    "DESCRIPTION": "Gain !B! Block."
-  },
-  "TheMusician:TestingDefender": {
-    "NAME": "TDefend",
-    "DESCRIPTION": "Gain !B! Block."
   }
 }

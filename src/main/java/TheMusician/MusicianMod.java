@@ -12,14 +12,18 @@ import TheMusician.Variables.MusicianCustomVariable;
 import TheMusician.Variables.MusicianSecondMagicNumber;
 import basemod.BaseMod;
 import basemod.ModPanel;
+import basemod.ReflectionHacks;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.audio.Sfx;
+import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
@@ -29,6 +33,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import TheMusician.Util.TextureLoader;
+
+import java.util.HashMap;
 
 
 @SpireInitializer
@@ -125,6 +131,10 @@ public class MusicianMod implements EditCharactersSubscriber,
         return getModID() + "Resources/images/enemies/" + resourcePath;
     }
 
+    public static String makeSoundPath(String resourcePath) {
+        return getModID() + "Resources/sounds/" + resourcePath;
+    }
+
 
     //~~~~~~~~~~~~~~~~~~~~ Setting ID values ~~~~~~~~~~~~~~~~~~~~//
     private static void setModID(String ID) {
@@ -179,6 +189,30 @@ public class MusicianMod implements EditCharactersSubscriber,
         }
 
         logger.info("Done Adding Card Groups");
+/*
+        logger.info("Adding in Sounds");
+
+        addSound(makeID("BasicAttack"), makeSoundPath("cards/attack/BasicAttack"));
+        addSound(makeID("CommonAttack"), makeSoundPath("cards/attack/CommonAttack"));
+        addSound(makeID("UncommonAttack"), makeSoundPath("cards/attack/UncommonAttack"));
+        addSound(makeID("RareAttack"), makeSoundPath("cards/attack/RareAttack"));
+
+        addSound(makeID("BasicSkill"), makeSoundPath("cards/skill/BasicSkill"));
+        addSound(makeID("CommonSkill"), makeSoundPath("cards/skill/CommonSkill"));
+        addSound(makeID("UncommonSkill"), makeSoundPath("cards/skill/UncommonSkill"));
+        addSound(makeID("RareSkill"), makeSoundPath("cards/skill/RareSkill"));
+
+        addSound(makeID("BasicPower"), makeSoundPath("cards/skill/BasicPower"));
+        addSound(makeID("CommonPower"), makeSoundPath("cards/skill/CommonPower"));
+        addSound(makeID("UncommonPower"), makeSoundPath("cards/skill/UncommonPower"));
+        addSound(makeID("RarePower"), makeSoundPath("cards/skill/RarePower"));
+
+        addSound(makeID("Curses"), makeSoundPath("curse/Curses"));
+        addSound(makeID("Status"), makeSoundPath("status/Status"));
+
+        logger.info("Done Adding in Sounds");
+*/
+
     }
 
     @Override
@@ -244,6 +278,8 @@ public class MusicianMod implements EditCharactersSubscriber,
         UnlockTracker.unlockCard(TheBand.CARD_ID);
 
 
+        //TESTING CARDS
+
         logger.info("Done adding Musician Cards.");
     }
 
@@ -274,5 +310,12 @@ public class MusicianMod implements EditCharactersSubscriber,
 
     private void InitializeMonsters() {
         BaseMod.addMonster("TheMusician:MusicalLover", () -> new MonsterGroup(new AbstractMonster[] {new MusicalLover(0, 0)}));
+    }
+
+    private static void addSound(String id, String path)
+    {
+        @SuppressWarnings("unchecked")
+        HashMap<String, Sfx> map = (HashMap<String,Sfx>) ReflectionHacks.getPrivate(CardCrawlGame.sound, SoundMaster.class, "map");
+        map.put(id, new Sfx(path, false));
     }
 }
