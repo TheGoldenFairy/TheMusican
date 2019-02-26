@@ -22,8 +22,10 @@ public class MusicalDestinyAction extends AbstractGameAction {
     //~~~~~~~~~~~~~~~~~~ Uses of the Action ~~~~~~~~~~~~~~~~~~//
     @Override
     public void update() {
-        if (duration == Settings.ACTION_DUR_FAST) {
+        if (this.duration == 0.5F) {
             AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), NumOfCards, tipMSG, false, false, false, true);
+        }
+        else {
             if ((!AbstractDungeon.isScreenUp) && (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty())) {
                 AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
                 for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
@@ -37,6 +39,7 @@ public class MusicalDestinyAction extends AbstractGameAction {
             }
             tickDuration();
         }
+    }
         tickDuration();
     }
 }
