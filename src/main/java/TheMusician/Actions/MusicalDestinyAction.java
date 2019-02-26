@@ -11,7 +11,8 @@ import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 public class MusicalDestinyAction extends AbstractGameAction {
 
     //~~~~~~~~~~~~~~~~~~ Variables to be used ~~~~~~~~~~~~~~~~~~//
-    private static final String tipMSG = "Card to be Purged.";
+    private static final String tipMSG = "Card to be removed.";
+    private static final String tipMSGs = "Cards to be removed.";
     private int NumOfCards;
 
 
@@ -27,7 +28,12 @@ public class MusicalDestinyAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
-            AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), NumOfCards, tipMSG, false, false, false, true);
+            if (NumOfCards == 1){
+                AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), NumOfCards, tipMSG, false, false, false, true);
+            }
+            else {
+                AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), NumOfCards, tipMSGs, false, false, false, true);
+            }
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25F));
             tickDuration();
         }
