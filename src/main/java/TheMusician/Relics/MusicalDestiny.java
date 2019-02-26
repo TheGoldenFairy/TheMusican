@@ -19,6 +19,7 @@ public class MusicalDestiny extends CustomRelic {
 
 
     //~~~~~~~~~~~~~~~~~~ Variables to be used ~~~~~~~~~~~~~~~~~~//
+    private static final int NumOfCards = 1;
 
 
     //~~~~~~~~~~~~~~~~~~ Initialize Relic ~~~~~~~~~~~~~~~~~~//
@@ -30,9 +31,7 @@ public class MusicalDestiny extends CustomRelic {
     //~~~~~~~~~~~~~~~~~~ Relic Use's ~~~~~~~~~~~~~~~~~~//
     @Override
     public void atBattleStart() {
-        if (CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).size() > 0) {
-            AbstractDungeon.actionManager.addToBottom(new MusicalDestinyAction());
-        }
+        AbstractDungeon.actionManager.addToBottom(new MusicalDestinyAction(NumOfCards));
     }
 
 
