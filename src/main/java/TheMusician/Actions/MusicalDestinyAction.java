@@ -23,7 +23,7 @@ public class MusicalDestinyAction extends AbstractGameAction {
     //~~~~~~~~~~~~~~~~~~ Uses of the Action ~~~~~~~~~~~~~~~~~~//
     @Override
     public void update() {
-        if (this.duration == 0.5F) {
+        if (duration == Settings.ACTION_DUR_FAST) {
             AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), NumOfCards, tipMSG, false, false, false, true);
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25F));
             tickDuration();
