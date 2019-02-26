@@ -17,6 +17,6 @@
   "TheMusician:MusicalDestiny": {
     "NAME": "Musical Destiny",
     "FLAVOR": "The True Destiny of a Musician.",
-    "DESCRIPTIONS": ["At the end of combat have another card to pick from."]
+    "DESCRIPTIONS": ["At the start of combat remove #b1 Card from your deck permanently. At the end of combat have another card to pick from."]
   }
 }

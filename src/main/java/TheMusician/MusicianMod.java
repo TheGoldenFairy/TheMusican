@@ -4,10 +4,7 @@ import TheMusician.Cards.*;
 import TheMusician.Characters.TheMusician;
 import TheMusician.Encounters.MusicalLover;
 import TheMusician.Patches.CustomTags;
-import TheMusician.Relics.MusicalAward;
-import TheMusician.Relics.MusicalCrowd;
-import TheMusician.Relics.MusicalDestiny;
-import TheMusician.Relics.MusicalInstrument;
+import TheMusician.Relics.*;
 import TheMusician.Variables.MusicianCustomVariable;
 import TheMusician.Variables.MusicianSecondMagicNumber;
 import basemod.BaseMod;
@@ -189,29 +186,12 @@ public class MusicianMod implements EditCharactersSubscriber,
         }
 
         logger.info("Done Adding Card Groups");
-/*
+
         logger.info("Adding in Sounds");
 
-        addSound(makeID("BasicAttack"), makeSoundPath("cards/attack/BasicAttack"));
-        addSound(makeID("CommonAttack"), makeSoundPath("cards/attack/CommonAttack"));
-        addSound(makeID("UncommonAttack"), makeSoundPath("cards/attack/UncommonAttack"));
-        addSound(makeID("RareAttack"), makeSoundPath("cards/attack/RareAttack"));
-
-        addSound(makeID("BasicSkill"), makeSoundPath("cards/skill/BasicSkill"));
-        addSound(makeID("CommonSkill"), makeSoundPath("cards/skill/CommonSkill"));
-        addSound(makeID("UncommonSkill"), makeSoundPath("cards/skill/UncommonSkill"));
-        addSound(makeID("RareSkill"), makeSoundPath("cards/skill/RareSkill"));
-
-        addSound(makeID("BasicPower"), makeSoundPath("cards/skill/BasicPower"));
-        addSound(makeID("CommonPower"), makeSoundPath("cards/skill/CommonPower"));
-        addSound(makeID("UncommonPower"), makeSoundPath("cards/skill/UncommonPower"));
-        addSound(makeID("RarePower"), makeSoundPath("cards/skill/RarePower"));
-
-        addSound(makeID("Curses"), makeSoundPath("curse/Curses"));
-        addSound(makeID("Status"), makeSoundPath("status/Status"));
 
         logger.info("Done Adding in Sounds");
-*/
+
 
     }
 
