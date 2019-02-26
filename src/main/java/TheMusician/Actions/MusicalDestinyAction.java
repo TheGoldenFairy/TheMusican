@@ -24,6 +24,7 @@ public class MusicalDestinyAction extends AbstractGameAction {
     public void update() {
         if (this.duration == 0.5F) {
             AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), NumOfCards, tipMSG, false, false, false, true);
+            tickDuration();
         }
         else {
             if ((!AbstractDungeon.isScreenUp) && (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty())) {
@@ -39,7 +40,6 @@ public class MusicalDestinyAction extends AbstractGameAction {
             }
             tickDuration();
         }
-    }
         tickDuration();
     }
 }
