@@ -10,13 +10,16 @@ import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 public class MusicalDestinyAction extends AbstractGameAction {
 
+    //~~~~~~~~~~~~~~~~~~ Variables to be used ~~~~~~~~~~~~~~~~~~//
     private static final String tipMSG = "Card to be Purged.";
-    private static final int NumOfCards = 1;
+    private int NumOfCards;
 
-    //~~~~~~~~~~~~~~~~~~ Worthless Fucking Constructor ~~~~~~~~~~~~~~~~~~//
-    public MusicalDestinyAction() {
+
+    //~~~~~~~~~~~~~~~~~~ Constructor ~~~~~~~~~~~~~~~~~~//
+    public MusicalDestinyAction(int NumOfCards) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
+        this.NumOfCards = NumOfCards;
     }
 
 
