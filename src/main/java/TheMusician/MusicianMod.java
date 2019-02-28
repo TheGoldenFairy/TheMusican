@@ -3,6 +3,7 @@ package TheMusician;
 import TheMusician.Cards.*;
 import TheMusician.Characters.TheMusician;
 import TheMusician.Encounters.MusicalLover;
+import TheMusician.Events.TheMusicianChallengeEvent;
 import TheMusician.Patches.CustomTags;
 import TheMusician.Relics.*;
 import TheMusician.Variables.MusicianCustomVariable;
@@ -22,6 +23,7 @@ import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
@@ -102,6 +104,7 @@ public class MusicianMod implements EditCharactersSubscriber,
         logger.info("Done subscribing");
     }
 
+    @SuppressWarnings("unused")
     public static void initialize() {
         logger.info("Initializing Reaper Mod");
         new MusicianMod();
@@ -187,8 +190,9 @@ public class MusicianMod implements EditCharactersSubscriber,
 
         logger.info("Done Adding Card Groups");
 
-        logger.info("Adding in Sounds");
+        logger.info("Adding in Event");
 
+        BaseMod.addEvent(TheMusicianChallengeEvent.ID, TheMusicianChallengeEvent.class, TheCity.ID);
 
         logger.info("Done Adding in Sounds");
 
@@ -292,12 +296,5 @@ public class MusicianMod implements EditCharactersSubscriber,
 
     private void InitializeMonsters() {
         BaseMod.addMonster("TheMusician:MusicalLover", () -> new MonsterGroup(new AbstractMonster[] {new MusicalLover(0, 0)}));
-    }
-
-    private static void addSound(String id, String path)
-    {
-        @SuppressWarnings("unchecked")
-        HashMap<String, Sfx> map = (HashMap<String,Sfx>) ReflectionHacks.getPrivate(CardCrawlGame.sound, SoundMaster.class, "map");
-        map.put(id, new Sfx(path, false));
     }
 }
