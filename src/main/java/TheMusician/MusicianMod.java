@@ -129,10 +129,9 @@ public class MusicianMod implements EditCharactersSubscriber,
         return getModID() + "Resources/images/enemies/" + resourcePath;
     }
 
-    public static String makeSoundPath(String resourcePath) {
-        return getModID() + "Resources/sounds/" + resourcePath;
+    public static String makeEventPath(String resourcePath) {
+        return getModID() + "Resources/images/events/" + resourcePath;
     }
-
 
     //~~~~~~~~~~~~~~~~~~~~ Setting ID values ~~~~~~~~~~~~~~~~~~~~//
     private static void setModID(String ID) {

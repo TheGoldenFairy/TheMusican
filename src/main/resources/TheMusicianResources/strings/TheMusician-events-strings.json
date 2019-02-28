@@ -1,0 +1,15 @@
+{
+  "TheMusician:TheMusicianChallengeEvent": {
+    "NAME": "Musician Challenge",
+    "DESCRIPTIONS": [
+      "As you move through ~The~ ~City~ you come across a #yconcert #ystage. NL You get up on it and look out into the emptiness.",
+      "You start playing music and start singing, and before long a crowd of people start gathering around",
+      "You rush off the stage, not willing to take up the challenge."
+    ],
+    "OPTIONS": [
+      "[Challenge] #gObtain #gthe #gtwo #gChallenge #gMusic #gRelics.",
+      "[Denial] #rRefuse #rthe #rchallenge.",
+      "[Leave]"
+    ]
+  }
+}

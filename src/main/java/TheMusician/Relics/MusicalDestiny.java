@@ -22,7 +22,7 @@ public class MusicalDestiny extends CustomRelic {
 
     //~~~~~~~~~~~~~~~~~~ Initialize Relic ~~~~~~~~~~~~~~~~~~//
     public MusicalDestiny() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.SOLID);
     }
 
 

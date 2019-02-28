@@ -28,7 +28,7 @@ public class MusicalCrowd extends CustomRelic {
 
     //~~~~~~~~~~~~~~~~~~ Initialize Relic ~~~~~~~~~~~~~~~~~~//
     public MusicalCrowd() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.SOLID);
     }
 
 
