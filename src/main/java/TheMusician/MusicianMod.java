@@ -10,6 +10,7 @@ import TheMusician.Variables.MusicianSecondMagicNumber;
 import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.ReflectionHacks;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -213,8 +214,10 @@ public class MusicianMod implements EditCharactersSubscriber,
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new MusicalInstrument(), TheMusician.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new MusicalAward(), TheMusician.Enums.COLOR_GOLD);
-        BaseMod.addRelicToCustomPool(new MusicalCrowd(), TheMusician.Enums.COLOR_GOLD);
-        BaseMod.addRelicToCustomPool(new MusicalDestiny(), TheMusician.Enums.COLOR_GOLD);
+
+        // This adds a relic to all classes
+        BaseMod.addRelic(new MusicalCrowd(), RelicType.SHARED);
+        BaseMod.addRelic(new MusicalDestiny(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(MusicalInstrument.ID);

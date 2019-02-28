@@ -23,7 +23,7 @@ public class MusicalCrowd extends CustomRelic {
     //~~~~~~~~~~~~~~~~~~ Variables  to be used ~~~~~~~~~~~~~~~~~~//
     private float previousMhb_x = 99999;
     private float offsetX;
-    private int NUMOFMONSTERS = 0;
+    private int NUMOFMONSTERS;
 
 
     //~~~~~~~~~~~~~~~~~~ Initialize Relic ~~~~~~~~~~~~~~~~~~//

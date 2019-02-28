@@ -4,8 +4,6 @@ import TheMusician.Actions.MusicalDestinyAction;
 import TheMusician.Util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static TheMusician.MusicianMod.*;
