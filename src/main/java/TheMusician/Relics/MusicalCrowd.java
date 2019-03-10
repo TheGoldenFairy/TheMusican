@@ -22,8 +22,6 @@ public class MusicalCrowd extends CustomRelic {
 
     //~~~~~~~~~~~~~~~~~~ Variables  to be used ~~~~~~~~~~~~~~~~~~//
     private float previousMhb_x = 99999;
-    private float offsetX;
-    private int NUMOFMONSTERS;
 
 
     //~~~~~~~~~~~~~~~~~~ Initialize Relic ~~~~~~~~~~~~~~~~~~//
@@ -36,7 +34,7 @@ public class MusicalCrowd extends CustomRelic {
     @Override
     public void atBattleStart() {
         if(!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss)) {
-            NUMOFMONSTERS = 0;
+            int NUMOFMONSTERS = 0;
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if(m.hb_x < previousMhb_x) {
                     previousMhb_x = m.hb_x;
@@ -44,7 +42,7 @@ public class MusicalCrowd extends CustomRelic {
                 NUMOFMONSTERS++;
             }
             if(NUMOFMONSTERS < 4) {
-                offsetX = previousMhb_x - 200;
+                float offsetX = previousMhb_x - 200;
                 AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new MusicalLover(offsetX - 100F, 15.0f), false));
             }
         }

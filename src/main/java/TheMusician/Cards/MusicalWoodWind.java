@@ -49,8 +49,8 @@ public class MusicalWoodWind extends CustomCard {
     //~~~~~~~~~~~~~~~~~~ Uses of the Card ~~~~~~~~~~~~~~~~~~//
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WoodWindPower(p, p, WOODWIND_AMT), WOODWIND_AMT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PercussionPower(p, p, PERCUSSION_AMT), PERCUSSION_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WoodWindPower(p, WOODWIND_AMT), WOODWIND_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PercussionPower(p, PERCUSSION_AMT), PERCUSSION_AMT));
     }
 
     //~~~~~~~~~~~~~~~~~~ Upgraded Card ~~~~~~~~~~~~~~~~~~

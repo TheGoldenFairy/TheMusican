@@ -18,14 +18,14 @@ public class Defend_Musician extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
     public static final String IMG = MusicianMod.makeCardPath("skills/Beta.png");
     public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
 
     //~~~~~~~~~~~~~~~~~~ Getting The Card Aspects ~~~~~~~~~~~~~~~~~~//
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheMusician.Enums.COLOR_GOLD;
+    private static final CardColor COLOR = TheMusician.Enums.COLOR_GOLD;
 
 
     //~~~~~~~~~~~~~~~~~~ Getting the Cards Numbers ~~~~~~~~~~~~~~~~~~//

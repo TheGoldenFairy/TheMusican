@@ -33,8 +33,8 @@ public class MusicalInstrument extends CustomRelic {
     //~~~~~~~~~~~~~~~~~~ Relic Uses ~~~~~~~~~~~~~~~~~~//
     @Override
     public void atBattleStart() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BrassPower(player, player, POWER_AMT), POWER_AMT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PercussionPower(player, player, POWER_AMT), POWER_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BrassPower(player, POWER_AMT), POWER_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PercussionPower(player, POWER_AMT), POWER_AMT));
     }
 
     //~~~~~~~~~~~~~~~~~~ Description ~~~~~~~~~~~~~~~~~~//

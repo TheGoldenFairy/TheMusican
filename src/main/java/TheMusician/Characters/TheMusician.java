@@ -32,7 +32,7 @@ import static TheMusician.MusicianMod.*;
 
 public class TheMusician extends CustomPlayer {
 
-    public static final Logger logger = LogManager.getLogger(TheMusician.class.getName());
+    private static final Logger logger = LogManager.getLogger(TheMusician.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
     // These are enums for your Characters color (both general color and for the card library) as well as
@@ -54,12 +54,12 @@ public class TheMusician extends CustomPlayer {
 
 
     //~~~~~~~~~~~~~ Starting Stats ~~~~~~~~~~~~~//
-    public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 75;
-    public static final int MAX_HP = 75;
-    public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 6;
-    public static final int ORB_SLOTS = 0;
+    private static final int ENERGY_PER_TURN = 3;
+    private static final int STARTING_HP = 75;
+    private static final int MAX_HP = 75;
+    private static final int STARTING_GOLD = 99;
+    private static final int CARD_DRAW = 6;
+    private static final int ORB_SLOTS = 0;
 
 
     //~~~~~~~~~~~~~ Strings for the Character ~~~~~~~~~~~~~//
@@ -70,7 +70,7 @@ public class TheMusician extends CustomPlayer {
 
 
     //~~~~~~~~~~~~~ Textures for the Energy ~~~~~~~~~~~~~//
-    public static final String[] orbTextures = {
+    private static final String[] orbTextures = {
             "TheMusicianResources/images/char/MusicianCharacter/orb/layer1.png",
             "TheMusicianResources/images/char/MusicianCharacter/orb/layer2.png",
             "TheMusicianResources/images/char/MusicianCharacter/orb/layer3.png",

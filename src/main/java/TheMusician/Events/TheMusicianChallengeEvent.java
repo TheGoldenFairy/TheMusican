@@ -25,8 +25,8 @@ public class TheMusicianChallengeEvent extends AbstractImageEvent {
 
     //~~~~~~~~~~~~~~~~~~ Variables to be used ~~~~~~~~~~~~~~~~~~//
     private int screenNum = 0; // The initial screen we will see when encountering the event - screen 0;
-    AbstractRelic Destiny = new MusicalDestiny();
-    AbstractRelic Crowd = new MusicalCrowd();
+    private AbstractRelic Destiny = new MusicalDestiny();
+    private AbstractRelic Crowd = new MusicalCrowd();
 
 
     //~~~~~~~~~~~~~~~~~~ Constructor ~~~~~~~~~~~~~~~~~~//
@@ -72,10 +72,9 @@ public class TheMusicianChallengeEvent extends AbstractImageEvent {
 
             //============ The Last Page of the Event ============//
             case 1:
-                switch (i) {
-                    case 0: // If you press the first (and this should be the only) button,
-                        openMap(); // You'll open the map and end the event.
-                        break;
+                // If you press the first (and this should be the only) button,
+                if (i == 0) {
+                    openMap(); // You'll open the map and end the event.
                 }
                 break;
         }

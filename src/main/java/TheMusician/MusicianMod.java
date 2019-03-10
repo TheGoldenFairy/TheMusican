@@ -10,19 +10,13 @@ import TheMusician.Variables.MusicianCustomVariable;
 import TheMusician.Variables.MusicianSecondMagicNumber;
 import basemod.BaseMod;
 import basemod.ModPanel;
-import basemod.ReflectionHacks;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.audio.Sfx;
-import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
@@ -34,8 +28,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import TheMusician.Util.TextureLoader;
 
-import java.util.HashMap;
-
 
 @SpireInitializer
 public class MusicianMod implements EditCharactersSubscriber,
@@ -43,7 +35,7 @@ public class MusicianMod implements EditCharactersSubscriber,
         EditCardsSubscriber,
         EditStringsSubscriber,
         PostInitializeSubscriber {
-    public static final Logger logger = LogManager.getLogger(MusicianMod.class.getName());
+    private static final Logger logger = LogManager.getLogger(MusicianMod.class.getName());
     private static String modID;
 
     //~~~~~~~~~~~~~~~~~~~~ This is for the in-game mod settings panel. ~~~~~~~~~~~~~~~~~~~~//
@@ -136,6 +128,7 @@ public class MusicianMod implements EditCharactersSubscriber,
         return getModID() + "Resources/images/events/" + resourcePath;
     }
 
+
     //~~~~~~~~~~~~~~~~~~~~ Setting ID values ~~~~~~~~~~~~~~~~~~~~//
     private static void setModID(String ID) {
         modID = ID;
@@ -147,13 +140,6 @@ public class MusicianMod implements EditCharactersSubscriber,
 
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
-    }
-
-
-    //~~~~~~~~~~~~~~~~~~~~ Path Checking ~~~~~~~~~~~~~~~~~~~~//
-    private static void pathCheck() {
-        String packageName = MusicianMod.class.getPackage().getName();
-        FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources");
     }
 
 
@@ -233,8 +219,6 @@ public class MusicianMod implements EditCharactersSubscriber,
     @Override
     public void receiveEditCards() {
         logger.info("Adding Musician variables");
-        //Ignore this
-        pathCheck();
 
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new MusicianCustomVariable());
@@ -292,6 +276,11 @@ public class MusicianMod implements EditCharactersSubscriber,
         //MonsterStrings
         BaseMod.loadCustomStringsFile(MonsterStrings.class,
                 getModID() + "Resources/strings/TheMusician-monsters-strings.json");
+
+        //EventStrings
+        BaseMod.loadCustomStringsFile(EventStrings.class,
+                getModID() + "Resources/strings/TheMusician-events-strings.json");
+
     }
 
     private void InitializeMonsters() {

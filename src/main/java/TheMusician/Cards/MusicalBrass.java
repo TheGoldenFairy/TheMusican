@@ -21,14 +21,14 @@ public class MusicalBrass extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
     public static final String IMG = MusicianMod.makeCardPath("skills/Beta.png");
     public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
 
     //~~~~~~~~~~~~~~~~~~ Getting The Card Aspects ~~~~~~~~~~~~~~~~~~//
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheMusician.Enums.COLOR_GOLD;
+    private static final CardColor COLOR = TheMusician.Enums.COLOR_GOLD;
 
 
     //~~~~~~~~~~~~~~~~~~ Getting the Cards Numbers ~~~~~~~~~~~~~~~~~~//
@@ -49,8 +49,8 @@ public class MusicalBrass extends CustomCard {
     //~~~~~~~~~~~~~~~~~~ Uses of the Card ~~~~~~~~~~~~~~~~~~//
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrassPower(p, p, BASS_AMT), BASS_AMT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StringsPower(p, p, STRING_AMT), STRING_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrassPower(p, BASS_AMT), BASS_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StringsPower(p, STRING_AMT), STRING_AMT));
     }
 
     //~~~~~~~~~~~~~~~~~~ Upgraded Card ~~~~~~~~~~~~~~~~~~

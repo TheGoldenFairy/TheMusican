@@ -26,5 +26,9 @@
   "TheMusician:TheBand": {
     "NAME": "The Band",
     "DESCRIPTION": "Add 1 Musical Card to your hand."
+  },
+  "TheMusician:Cornet": {
+    "NAME": "Cornet",
+    "DESCRIPTION": "Brass. NL Deal !D! damage. NL Draw a Card. NL If that card is a Brass deal 3 damage to a random enemy. NL If the card is a String, increase it's cost by 1 this turn."
   }
 }

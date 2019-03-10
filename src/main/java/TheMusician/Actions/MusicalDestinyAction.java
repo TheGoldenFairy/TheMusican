@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class MusicalDestinyAction extends AbstractGameAction {
 

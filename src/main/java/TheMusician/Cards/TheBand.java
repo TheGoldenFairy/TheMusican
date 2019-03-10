@@ -2,11 +2,9 @@ package TheMusician.Cards;
 
 import TheMusician.Characters.TheMusician;
 import TheMusician.MusicianMod;
-import TheMusician.Patches.CustomTags;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,20 +20,19 @@ public class TheBand extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(CARD_ID);
     public static final String IMG = MusicianMod.makeCardPath("skills/Beta.png");
     public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
 
     //~~~~~~~~~~~~~~~~~~ Getting The Card Aspects ~~~~~~~~~~~~~~~~~~//
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheMusician.Enums.COLOR_GOLD;
+    private static final CardColor COLOR = TheMusician.Enums.COLOR_GOLD;
 
 
     //~~~~~~~~~~~~~~~~~~ Getting the Cards Numbers ~~~~~~~~~~~~~~~~~~//
     private static final int COST = 1;
     private static final int UPGRADE_MINUS_COST = 0;
-    private AbstractCard TempCard;
 
 
     //~~~~~~~~~~~~~~~~~~ Initializing the Card ~~~~~~~~~~~~~~~~~~//
@@ -46,8 +43,8 @@ public class TheBand extends CustomCard {
     //~~~~~~~~~~~~~~~~~~ Uses of the Card ~~~~~~~~~~~~~~~~~~//
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        TempCard = MusicalGroup.getRandomCard(AbstractDungeon.cardRandomRng);
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(TempCard));
+        AbstractCard tempCard = MusicalGroup.getRandomCard(AbstractDungeon.cardRandomRng);
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(tempCard));
     }
 
     //~~~~~~~~~~~~~~~~~~ Upgraded Card ~~~~~~~~~~~~~~~~~~

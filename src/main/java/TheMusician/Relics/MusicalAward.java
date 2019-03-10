@@ -36,10 +36,10 @@ public class MusicalAward extends CustomRelic {
     //~~~~~~~~~~~~~~~~~~ Relic Uses ~~~~~~~~~~~~~~~~~~//
     @Override
     public void atBattleStart() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BrassPower(player, player, POWER_AMT), POWER_AMT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StringsPower(player, player, POWER_AMT), POWER_AMT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WoodWindPower(player, player, POWER_AMT), POWER_AMT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PercussionPower(player, player, POWER_AMT), POWER_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BrassPower(player, POWER_AMT), POWER_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StringsPower(player, POWER_AMT), POWER_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WoodWindPower(player, POWER_AMT), POWER_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PercussionPower(player, POWER_AMT), POWER_AMT));
     }
 
     @Override

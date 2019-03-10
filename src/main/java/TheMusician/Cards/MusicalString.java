@@ -49,8 +49,8 @@ public class MusicalString extends CustomCard {
     //~~~~~~~~~~~~~~~~~~ Uses of the Card ~~~~~~~~~~~~~~~~~~//
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StringsPower(p, p, STRING_AMT), STRING_AMT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrassPower(p, p, BASS_AMT), BASS_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StringsPower(p, STRING_AMT), STRING_AMT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BrassPower(p, BASS_AMT), BASS_AMT));
     }
 
     //~~~~~~~~~~~~~~~~~~ Upgraded Card ~~~~~~~~~~~~~~~~~~
